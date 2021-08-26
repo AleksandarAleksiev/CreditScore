@@ -1,6 +1,6 @@
 object Versions {
     object Plugins {
-        const val agpVersion = "4.1.1"
+        const val agpVersion = "7.0.1"
     }
 
     object Kotlin {
