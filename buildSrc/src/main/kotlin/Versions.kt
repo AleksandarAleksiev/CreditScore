@@ -28,9 +28,13 @@ object Versions {
     }
 
     object Test {
-        const val junitVersion = "4.12"
-        const val mockitoVersion = "3.9.0"
-        const val androidXjUnitVersion = "1.1.2"
-        const val espressoCoreVersion = "3.3.0"
+        const val junit = "4.12"
+        const val mockito = "3.9.0"
+        const val mockitoKotlin = "3.2.0"
+        const val androidXTest = "1.4.0"
+        const val androidXjUnit = "1.1.3"
+        const val androidArchTestCore = "2.1.0"
+        const val espressoCore = "3.3.0"
+        const val coroutines = "1.5.1"
     }
 }
