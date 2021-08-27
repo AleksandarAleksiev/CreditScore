@@ -37,6 +37,8 @@ android {
 
 dependencies {
 
+    implementation(project(":core"))
+
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.coreKtx)
 

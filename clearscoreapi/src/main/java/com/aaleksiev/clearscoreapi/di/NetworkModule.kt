@@ -2,6 +2,7 @@ package com.aaleksiev.clearscoreapi.di
 
 import android.content.Context
 import com.aaleksiev.clearscoreapi.BuildConfig
+import com.aaleksiev.core.ApiEndpoint
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
