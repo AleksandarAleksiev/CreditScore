@@ -1,16 +1,18 @@
 plugins {
     id(Plugins.androidApplication)
     id(Plugins.kotlin)
+    id(Plugins.kotlinKapt)
+    id(Plugins.hilt)
 }
 
 android {
-    compileSdkVersion(AppConfig.targetSdk)
-    buildToolsVersion(AppConfig.buildToolsVersion)
+    compileSdk = AppConfig.targetSdk
+    buildToolsVersion = AppConfig.buildToolsVersion
 
     defaultConfig {
         applicationId = "com.aaleksiev.creditscore"
-        minSdkVersion(AppConfig.minSdk)
-        targetSdkVersion(AppConfig.targetSdk)
+        minSdk = AppConfig.minSdk
+        targetSdk = AppConfig.targetSdk
         versionCode = 1
         versionName = "1.0"
 
@@ -19,6 +21,12 @@ android {
         }
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField(
+            "String",
+            "API_ENDPOINT",
+            "\"https://android-interview.s3.eu-west-2.amazonaws.com/\""
+        )
     }
 
     buildTypes {
@@ -38,12 +46,20 @@ android {
 
 dependencies {
 
+    implementation(project(":clearscoreapi"))
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.coreKtx)
-    implementation(Dependencies.AndroidX.appCompat)
     implementation(Dependencies.MaterialDesign.material)
+
+    implementation(Dependencies.AndroidX.hilt)
+
+    add("kapt", Dependencies.Kapt.hilt)
 
     testImplementation(Dependencies.Test.jUnit)
     androidTestImplementation(Dependencies.Test.androidXjUnit)
     androidTestImplementation(Dependencies.Test.espressoCore)
+}
+
+kapt {
+    correctErrorTypes = true
 }
