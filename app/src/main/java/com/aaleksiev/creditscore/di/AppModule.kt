@@ -1,6 +1,6 @@
 package com.aaleksiev.creditscore.di
 
-import com.aaleksiev.clearscoreapi.di.ApiEndpoint
+import com.aaleksiev.core.ApiEndpoint
 import com.aaleksiev.creditscore.BuildConfig
 import dagger.Module
 import dagger.Provides
