@@ -38,10 +38,23 @@ object Dependencies {
     }
 
     object Test {
-        const val jUnit = "junit:junit:${Versions.Test.junitVersion}"
-        const val mockito = "org.mockito:mockito-core:${Versions.Test.mockitoVersion}"
-        const val androidXjUnit = "androidx.test.ext:junit:${Versions.Test.androidXjUnitVersion}"
+        const val jUnit = "junit:junit:${Versions.Test.junit}"
+        const val mockito = "org.mockito:mockito-core:${Versions.Test.mockito}"
+        const val mockitoKotlin =
+            "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.Test.mockitoKotlin}"
+
+        const val archCoreTesting =
+            "androidx.arch.core:core-testing:${Versions.Test.androidArchTestCore}"
+        const val androidXTestCore = "androidx.test:core-ktx:${Versions.Test.androidXTest}"
+        const val androidXTestRules = "androidx.test:rules:${Versions.Test.androidXTest}"
+        const val androidXTestRunner = "androidx.test:runner:${Versions.Test.androidXTest}"
+        const val androidXTestExtTruth = "androidx.test.ext:truth:${Versions.Test.androidXTest}"
+        const val androidXjUnit = "androidx.test.ext:junit-ktx:${Versions.Test.androidXjUnit}"
+
         const val espressoCore =
-            "androidx.test.espresso:espresso-core:${Versions.Test.espressoCoreVersion}"
+            "androidx.test.espresso:espresso-core:${Versions.Test.espressoCore}"
+
+        const val coroutines =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.Test.coroutines}"
     }
 }

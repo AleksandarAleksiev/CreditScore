@@ -55,10 +55,9 @@ internal class NetworkModule {
         }
     }
 
-    private fun providesMoshi(): Moshi = Moshi.Builder()
-        .build()
-
-    private companion object {
+    companion object {
         const val MAX_CACHE_SIZE = 10 * 1024 * 1024L // 10MB
+        fun providesMoshi(): Moshi = Moshi.Builder()
+            .build()
     }
 }

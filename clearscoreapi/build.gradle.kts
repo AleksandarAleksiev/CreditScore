@@ -33,6 +33,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -55,7 +61,9 @@ dependencies {
     add("kapt", Dependencies.Kapt.moshi)
     add("kapt", Dependencies.Kapt.hilt)
 
-    testImplementation(Dependencies.Test.jUnit)
-    androidTestImplementation(Dependencies.Test.androidXjUnit)
-    androidTestImplementation(Dependencies.Test.espressoCore)
+    testImplementation(Dependencies.Test.mockito)
+    testImplementation(Dependencies.Test.androidXjUnit)
+    testImplementation(Dependencies.Test.androidXTestCore)
+    testImplementation(Dependencies.Test.androidXTestRules)
+    testImplementation(Dependencies.Test.androidXTestExtTruth)
 }

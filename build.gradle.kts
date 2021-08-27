@@ -31,6 +31,12 @@ allprojects {
             )
         }
     }
+
+    tasks.withType(Test::class) {
+        testLogging {
+            events("started", "passed", "skipped", "failed")
+        }
+    }
 }
 
 tasks.register("clean", Delete::class) {
