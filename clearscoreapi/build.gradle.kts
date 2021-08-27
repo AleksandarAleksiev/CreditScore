@@ -1,5 +1,5 @@
 plugins {
-    id(Plugins.androidApplication)
+    id(Plugins.androidLibrary)
     id(Plugins.kotlin)
     id(Plugins.kotlinKapt)
     id(Plugins.hilt)
@@ -10,31 +10,22 @@ android {
     buildToolsVersion = AppConfig.buildToolsVersion
 
     defaultConfig {
-        applicationId = "com.aaleksiev.creditscore"
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
-        versionCode = 1
-        versionName = "1.0"
 
         vectorDrawables {
             useSupportLibrary = true
         }
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        buildConfigField(
-            "String",
-            "API_ENDPOINT",
-            "\"https://android-interview.s3.eu-west-2.amazonaws.com/\""
-        )
     }
 
     buildTypes {
         getByName("release") {
             isMinifyEnabled = true
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
     }
@@ -46,20 +37,23 @@ android {
 
 dependencies {
 
-    implementation(project(":clearscoreapi"))
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.coreKtx)
-    implementation(Dependencies.MaterialDesign.material)
+
+    implementation(Dependencies.Network.retrofit)
+    implementation(Dependencies.Network.retrofitJsonConverter)
+    implementation(Dependencies.Network.okhttp)
+    implementation(Dependencies.Network.okhttpLoggingInterceptor)
+
+    implementation(Dependencies.Json.moshi)
+    implementation(Dependencies.Json.moshiAdapters)
 
     implementation(Dependencies.AndroidX.hilt)
 
+    add("kapt", Dependencies.Kapt.moshi)
     add("kapt", Dependencies.Kapt.hilt)
 
     testImplementation(Dependencies.Test.jUnit)
     androidTestImplementation(Dependencies.Test.androidXjUnit)
     androidTestImplementation(Dependencies.Test.espressoCore)
-}
-
-kapt {
-    correctErrorTypes = true
 }
