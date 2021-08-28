@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CreditScore</string>
+    <string name="credit_report">Credit report</string>
 </resources>

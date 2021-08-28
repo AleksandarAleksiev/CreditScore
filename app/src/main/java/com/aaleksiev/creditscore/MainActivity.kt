@@ -1,8 +1,7 @@
-package com.aaleksiev.creditscore.ui
+package com.aaleksiev.creditscore
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.aaleksiev.creditscore.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -52,6 +52,7 @@ dependencies {
     implementation(Dependencies.AndroidX.coreKtx)
     implementation(Dependencies.AndroidX.fragment)
     implementation(Dependencies.MaterialDesign.material)
+    implementation(Dependencies.AndroidX.navigationFragment)
 
     implementation(Dependencies.AndroidX.hilt)
 
