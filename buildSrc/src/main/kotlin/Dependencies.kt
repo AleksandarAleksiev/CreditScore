@@ -2,6 +2,8 @@ object Dependencies {
     object Kotlin {
         const val stdLib =
             "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.Kotlin.kotlinVersion}"
+        const val coroutinesAndroid =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Kotlin.coroutinesAndroid}"
     }
 
     object AndroidX {
@@ -10,6 +12,11 @@ object Dependencies {
         const val constraintLayout =
             "androidx.constraintlayout:constraintlayout:${Versions.AndroidX.constraintLayoutVersion}"
         const val hilt = "com.google.dagger:hilt-android:${Versions.AndroidX.hiltVersion}"
+        const val fragment = "androidx.fragment:fragment-ktx:${Versions.AndroidX.fragment}"
+        const val navigation =
+            "androidx.navigation:navigation-runtime-ktx:${Versions.AndroidX.navigation}"
+        const val navigationFragment =
+            "androidx.navigation:navigation-fragment-ktx:${Versions.AndroidX.navigation}"
     }
 
     object MaterialDesign {
@@ -56,5 +63,7 @@ object Dependencies {
 
         const val coroutines =
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.Test.coroutines}"
+
+        const val fragment = "androidx.fragment:fragment-testing${Versions.AndroidX.fragment}"
     }
 }

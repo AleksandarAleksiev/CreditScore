@@ -50,6 +50,7 @@ dependencies {
 
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.coreKtx)
+    implementation(Dependencies.AndroidX.fragment)
     implementation(Dependencies.MaterialDesign.material)
 
     implementation(Dependencies.AndroidX.hilt)
