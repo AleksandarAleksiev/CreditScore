@@ -38,6 +38,7 @@ android {
 dependencies {
 
     implementation(Dependencies.Kotlin.stdLib)
+    implementation(Dependencies.Kotlin.coroutinesAndroid)
     implementation(Dependencies.AndroidX.coreKtx)
 
     implementation(Dependencies.AndroidX.hilt)
