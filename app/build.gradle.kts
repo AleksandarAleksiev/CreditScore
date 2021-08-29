@@ -58,6 +58,8 @@ dependencies {
     implementation(Dependencies.AndroidX.lifecycleViewModel)
     implementation(Dependencies.AndroidX.lifecycleLiveData)
 
+    implementation(Dependencies.Network.retrofit)
+
     implementation(Dependencies.AndroidX.hilt)
 
     add("kapt", Dependencies.Kapt.hilt)
