@@ -47,18 +47,30 @@ android {
 dependencies {
 
     implementation(project(":core"))
+    implementation(project(":clearscoreapi"))
 
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.coreKtx)
     implementation(Dependencies.AndroidX.fragment)
     implementation(Dependencies.MaterialDesign.material)
     implementation(Dependencies.AndroidX.navigationFragment)
+    implementation(Dependencies.AndroidX.lifecycleRuntime)
+    implementation(Dependencies.AndroidX.lifecycleViewModel)
+    implementation(Dependencies.AndroidX.lifecycleLiveData)
 
     implementation(Dependencies.AndroidX.hilt)
 
     add("kapt", Dependencies.Kapt.hilt)
+    add("kapt", Dependencies.Kapt.lifecycle)
 
-    testImplementation(Dependencies.Test.jUnit)
+    testImplementation(Dependencies.Test.mockito)
+    testImplementation(Dependencies.Test.mockitoInline)
+    testImplementation(Dependencies.Test.androidXArchCore)
+    testImplementation(Dependencies.Test.androidXjUnit)
+    testImplementation(Dependencies.Test.androidXTestCore)
+    testImplementation(Dependencies.Test.androidXTestRules)
+    testImplementation(Dependencies.Test.androidXTestExtTruth)
+    testImplementation(Dependencies.Test.coroutines)
     androidTestImplementation(Dependencies.Test.androidXjUnit)
     androidTestImplementation(Dependencies.Test.espressoCore)
 }

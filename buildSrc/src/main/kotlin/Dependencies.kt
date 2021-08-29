@@ -12,13 +12,28 @@ object Dependencies {
         const val constraintLayout =
             "androidx.constraintlayout:constraintlayout:${Versions.AndroidX.constraintLayoutVersion}"
         const val hilt = "com.google.dagger:hilt-android:${Versions.AndroidX.hiltVersion}"
+
         const val fragment = "androidx.fragment:fragment-ktx:${Versions.AndroidX.fragment}"
+
         const val navigation =
             "androidx.navigation:navigation-runtime-ktx:${Versions.AndroidX.navigation}"
         const val navigationUi =
             "androidx.navigation:navigation-ui-ktx:${Versions.AndroidX.navigation}"
         const val navigationFragment =
             "androidx.navigation:navigation-fragment-ktx:${Versions.AndroidX.navigation}"
+
+        const val lifecycleCompiler =
+            "androidx.lifecycle:lifecycle-compiler:${Versions.AndroidX.lifeCycle}"
+        const val lifecycleRuntime =
+            "androidx.lifecycle:lifecycle-runtime:${Versions.AndroidX.lifeCycle}"
+        const val lifecycleProcess =
+            "androidx.lifecycle:lifecycle-process:${Versions.AndroidX.lifeCycle}"
+        const val lifecycleViewModel =
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidX.lifeCycle}"
+        const val lifecycleLiveData =
+            "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.AndroidX.lifeCycle}"
+        const val lifecycleCommon =
+            "androidx.lifecycle:lifecycle-common-java8:${Versions.AndroidX.lifeCycle}"
     }
 
     object MaterialDesign {
@@ -28,6 +43,7 @@ object Dependencies {
 
     object Kapt {
         const val hilt = "com.google.dagger:hilt-compiler:${Versions.AndroidX.hiltVersion}"
+        const val lifecycle = "androidx.lifecycle:lifecycle-compiler:${Versions.AndroidX.lifeCycle}"
         const val moshi = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.Json.moshi}"
     }
 
@@ -51,9 +67,10 @@ object Dependencies {
         const val mockito = "org.mockito:mockito-core:${Versions.Test.mockito}"
         const val mockitoKotlin =
             "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.Test.mockitoKotlin}"
+        const val mockitoInline = "org.mockito:mockito-inline:${Versions.Test.mockito}"
 
-        const val archCoreTesting =
-            "androidx.arch.core:core-testing:${Versions.Test.androidArchTestCore}"
+        const val androidXArchCore =
+            "androidx.arch.core:core-testing:${Versions.Test.androidXArchCore}"
         const val androidXTestCore = "androidx.test:core-ktx:${Versions.Test.androidXTest}"
         const val androidXTestRules = "androidx.test:rules:${Versions.Test.androidXTest}"
         const val androidXTestRunner = "androidx.test:runner:${Versions.Test.androidXTest}"
