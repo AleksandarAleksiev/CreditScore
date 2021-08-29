@@ -20,7 +20,7 @@ android {
             useSupportLibrary = true
         }
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.aaleksiev.creditscore.TestApplicationRunner"
 
         buildConfigField(
             "String",
@@ -66,19 +66,24 @@ dependencies {
 
     implementation(Dependencies.AndroidX.hilt)
 
-    add("kapt", Dependencies.Kapt.hilt)
-    add("kapt", Dependencies.Kapt.lifecycle)
+    kapt(Dependencies.Kapt.hilt)
+    kapt(Dependencies.Kapt.lifecycle)
 
-    testImplementation(Dependencies.Test.mockito)
     testImplementation(Dependencies.Test.mockitoInline)
     testImplementation(Dependencies.Test.androidXArchCore)
     testImplementation(Dependencies.Test.androidXjUnit)
     testImplementation(Dependencies.Test.androidXTestCore)
-    testImplementation(Dependencies.Test.androidXTestRules)
     testImplementation(Dependencies.Test.androidXTestExtTruth)
     testImplementation(Dependencies.Test.coroutines)
+
+    androidTestImplementation(Dependencies.Test.mockitoAndroid)
     androidTestImplementation(Dependencies.Test.androidXjUnit)
+    androidTestImplementation(Dependencies.Test.androidXTestRules)
+    androidTestImplementation(Dependencies.Test.androidXTestRunner)
     androidTestImplementation(Dependencies.Test.espressoCore)
+    androidTestImplementation(Dependencies.Test.hilt)
+
+    kaptAndroidTest(Dependencies.Kapt.hilt)
 }
 
 kapt {

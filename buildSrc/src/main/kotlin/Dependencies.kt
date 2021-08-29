@@ -68,6 +68,7 @@ object Dependencies {
         const val mockitoKotlin =
             "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.Test.mockitoKotlin}"
         const val mockitoInline = "org.mockito:mockito-inline:${Versions.Test.mockito}"
+        const val mockitoAndroid = "org.mockito:mockito-android:${Versions.Test.mockito}"
 
         const val androidXArchCore =
             "androidx.arch.core:core-testing:${Versions.Test.androidXArchCore}"
@@ -83,6 +84,7 @@ object Dependencies {
         const val coroutines =
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.Test.coroutines}"
 
-        const val fragment = "androidx.fragment:fragment-testing${Versions.AndroidX.fragment}"
+        const val fragment = "androidx.fragment:fragment-testing:${Versions.AndroidX.fragment}"
+        const val hilt = "com.google.dagger:hilt-android-testing:${Versions.AndroidX.hiltVersion}"
     }
 }

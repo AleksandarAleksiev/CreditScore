@@ -11,7 +11,7 @@ import retrofit2.Retrofit
     includes = [NetworkModule::class]
 )
 @InstallIn(SingletonComponent::class)
-internal class ClearScoreApiModule {
+class ClearScoreApiModule {
     @Provides
     fun providesCreditReportApi(retrofit: Retrofit): CreditReportApi =
         retrofit.create(CreditReportApi::class.java)
