@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".creditreport.CreditReportFragment"></FrameLayout>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".creditreport.CreditReportFragment">
+
+    <com.aaleksiev.creditscore.DoughnutLayout
+        android:id="@+id/doughnut_layout"
+        style="@style/CreditReportCardView"
+        android:layout_width="@dimen/dimen_300"
+        android:layout_height="@dimen/dimen_300"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/title"
+                style="@style/CreditReportTitle"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:text="@string/your_credit_report"
+                app:layout_constraintBottom_toTopOf="@+id/credit_score"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/credit_score"
+                style="@style/CreditReportScore"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                app:layout_constraintBottom_toTopOf="@id/total_credit_score"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="327" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/total_credit_score"
+                style="@style/CreditReportTitle"
+                android:layout_width="@dimen/dimen_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/credit_score"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="out of 700" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.aaleksiev.creditscore.DoughnutLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,15 +5,19 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.aaleksiev.core.models.updateUI
+import com.aaleksiev.core.viewbinding.viewBinding
 import com.aaleksiev.creditscore.R
 import com.aaleksiev.creditscore.creditreport.models.UserCreditReport
 import com.aaleksiev.creditscore.creditreport.viewmodel.CreditReportViewModel
+import com.aaleksiev.creditscore.databinding.FragmentCreditReportBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class CreditReportFragment : Fragment(R.layout.fragment_credit_report) {
 
     private val viewModel: CreditReportViewModel by viewModels()
+
+    private val binding by viewBinding(FragmentCreditReportBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,11 +31,14 @@ class CreditReportFragment : Fragment(R.layout.fragment_credit_report) {
     }
 
     private fun onLoading(isLoading: Boolean) {
-        //TODO "Not yet implemented"
+        binding.doughnutLayout.setIndeterminate(isLoading)
     }
 
-    private fun onSuccess(userCreditReport: UserCreditReport) {
-        //TODO "Not yet implemented"
+    private fun onSuccess(userCreditReport: UserCreditReport) = with(binding) {
+        doughnutLayout.setPercent(userCreditReport.percentOfTotal())
+        totalCreditScore.text =
+            getString(R.string.your_credit_score_out_of, userCreditReport.maxCreditScore)
+        creditScore.text = userCreditReport.creditScore.toString()
     }
 
     private fun onError(message: String) {
