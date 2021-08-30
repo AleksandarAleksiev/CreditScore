@@ -5,6 +5,7 @@ object Versions {
 
     object Kotlin {
         const val kotlinVersion = "1.5.30"
+        const val coroutinesAndroid = "1.3.9"
     }
 
     object AndroidX {
@@ -12,6 +13,9 @@ object Versions {
         const val coreKtxVersion = "1.5.0"
         const val constraintLayoutVersion = "2.0.4"
         const val hiltVersion = "2.38.1"
+        const val fragment = "1.3.6"
+        const val navigation = "2.3.5"
+        const val lifeCycle = "2.3.1"
     }
 
     object MaterialDesign {
@@ -33,7 +37,7 @@ object Versions {
         const val mockitoKotlin = "3.2.0"
         const val androidXTest = "1.4.0"
         const val androidXjUnit = "1.1.3"
-        const val androidArchTestCore = "2.1.0"
+        const val androidXArchCore = "2.1.0"
         const val espressoCore = "3.3.0"
         const val coroutines = "1.5.1"
     }

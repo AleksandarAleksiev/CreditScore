@@ -33,12 +33,18 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
     implementation(Dependencies.Kotlin.stdLib)
+    implementation(Dependencies.Kotlin.coroutinesAndroid)
     implementation(Dependencies.AndroidX.coreKtx)
+    implementation(Dependencies.AndroidX.lifecycleCommon)
 
     implementation(Dependencies.AndroidX.hilt)
 

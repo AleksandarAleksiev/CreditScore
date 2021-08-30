@@ -1,4 +1,4 @@
-package com.aaleksiev.core
+package com.aaleksiev.core.di
 
 import javax.inject.Qualifier
 

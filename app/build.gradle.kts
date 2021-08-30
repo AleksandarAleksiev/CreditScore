@@ -20,7 +20,7 @@ android {
             useSupportLibrary = true
         }
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.aaleksiev.creditscore.TestApplicationRunner"
 
         buildConfigField(
             "String",
@@ -33,8 +33,8 @@ android {
         getByName("release") {
             isMinifyEnabled = true
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
     }
@@ -42,23 +42,48 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
     implementation(project(":core"))
+    implementation(project(":clearscoreapi"))
 
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.coreKtx)
+    implementation(Dependencies.AndroidX.fragment)
     implementation(Dependencies.MaterialDesign.material)
+    implementation(Dependencies.AndroidX.navigationFragment)
+    implementation(Dependencies.AndroidX.lifecycleRuntime)
+    implementation(Dependencies.AndroidX.lifecycleViewModel)
+    implementation(Dependencies.AndroidX.lifecycleLiveData)
+
+    implementation(Dependencies.Network.retrofit)
 
     implementation(Dependencies.AndroidX.hilt)
 
-    add("kapt", Dependencies.Kapt.hilt)
+    kapt(Dependencies.Kapt.hilt)
+    kapt(Dependencies.Kapt.lifecycle)
 
-    testImplementation(Dependencies.Test.jUnit)
+    testImplementation(Dependencies.Test.mockitoInline)
+    testImplementation(Dependencies.Test.androidXArchCore)
+    testImplementation(Dependencies.Test.androidXjUnit)
+    testImplementation(Dependencies.Test.androidXTestCore)
+    testImplementation(Dependencies.Test.androidXTestExtTruth)
+    testImplementation(Dependencies.Test.coroutines)
+
+    androidTestImplementation(Dependencies.Test.mockitoAndroid)
     androidTestImplementation(Dependencies.Test.androidXjUnit)
+    androidTestImplementation(Dependencies.Test.androidXTestRules)
+    androidTestImplementation(Dependencies.Test.androidXTestRunner)
     androidTestImplementation(Dependencies.Test.espressoCore)
+    androidTestImplementation(Dependencies.Test.hilt)
+
+    kaptAndroidTest(Dependencies.Kapt.hilt)
 }
 
 kapt {
