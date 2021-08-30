@@ -48,7 +48,7 @@ dependencies {
 
     implementation(Dependencies.AndroidX.hilt)
 
-    add("kapt", Dependencies.Kapt.hilt)
+    kapt(Dependencies.Kapt.hilt)
 
     testImplementation(Dependencies.Test.jUnit)
     androidTestImplementation(Dependencies.Test.androidXjUnit)

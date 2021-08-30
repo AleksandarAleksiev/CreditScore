@@ -55,14 +55,13 @@ dependencies {
 
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.coreKtx)
+    implementation(Dependencies.AndroidX.constraintLayout)
     implementation(Dependencies.AndroidX.fragment)
     implementation(Dependencies.MaterialDesign.material)
     implementation(Dependencies.AndroidX.navigationFragment)
     implementation(Dependencies.AndroidX.lifecycleRuntime)
     implementation(Dependencies.AndroidX.lifecycleViewModel)
     implementation(Dependencies.AndroidX.lifecycleLiveData)
-
-    implementation(Dependencies.Network.retrofit)
 
     implementation(Dependencies.AndroidX.hilt)
 

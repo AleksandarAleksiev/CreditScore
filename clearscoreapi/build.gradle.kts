@@ -48,7 +48,7 @@ dependencies {
     implementation(Dependencies.Kotlin.stdLib)
     implementation(Dependencies.AndroidX.coreKtx)
 
-    implementation(Dependencies.Network.retrofit)
+    api(Dependencies.Network.retrofit)
     implementation(Dependencies.Network.retrofitJsonConverter)
     implementation(Dependencies.Network.okhttp)
     implementation(Dependencies.Network.okhttpLoggingInterceptor)
@@ -58,10 +58,9 @@ dependencies {
 
     implementation(Dependencies.AndroidX.hilt)
 
-    add("kapt", Dependencies.Kapt.moshi)
-    add("kapt", Dependencies.Kapt.hilt)
+    kapt(Dependencies.Kapt.moshi)
+    kapt(Dependencies.Kapt.hilt)
 
-    testImplementation(Dependencies.Test.mockito)
     testImplementation(Dependencies.Test.androidXjUnit)
     testImplementation(Dependencies.Test.androidXTestCore)
     testImplementation(Dependencies.Test.androidXTestRules)

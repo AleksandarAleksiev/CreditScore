@@ -8,26 +8,17 @@ object Dependencies {
 
     object AndroidX {
         const val coreKtx = "androidx.core:core-ktx:${Versions.AndroidX.coreKtxVersion}"
-        const val appCompat = "androidx.appcompat:appcompat:${Versions.AndroidX.appCompatVersion}"
         const val constraintLayout =
             "androidx.constraintlayout:constraintlayout:${Versions.AndroidX.constraintLayoutVersion}"
         const val hilt = "com.google.dagger:hilt-android:${Versions.AndroidX.hiltVersion}"
 
         const val fragment = "androidx.fragment:fragment-ktx:${Versions.AndroidX.fragment}"
 
-        const val navigation =
-            "androidx.navigation:navigation-runtime-ktx:${Versions.AndroidX.navigation}"
-        const val navigationUi =
-            "androidx.navigation:navigation-ui-ktx:${Versions.AndroidX.navigation}"
         const val navigationFragment =
             "androidx.navigation:navigation-fragment-ktx:${Versions.AndroidX.navigation}"
 
-        const val lifecycleCompiler =
-            "androidx.lifecycle:lifecycle-compiler:${Versions.AndroidX.lifeCycle}"
         const val lifecycleRuntime =
             "androidx.lifecycle:lifecycle-runtime:${Versions.AndroidX.lifeCycle}"
-        const val lifecycleProcess =
-            "androidx.lifecycle:lifecycle-process:${Versions.AndroidX.lifeCycle}"
         const val lifecycleViewModel =
             "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidX.lifeCycle}"
         const val lifecycleLiveData =
@@ -64,9 +55,6 @@ object Dependencies {
 
     object Test {
         const val jUnit = "junit:junit:${Versions.Test.junit}"
-        const val mockito = "org.mockito:mockito-core:${Versions.Test.mockito}"
-        const val mockitoKotlin =
-            "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.Test.mockitoKotlin}"
         const val mockitoInline = "org.mockito:mockito-inline:${Versions.Test.mockito}"
         const val mockitoAndroid = "org.mockito:mockito-android:${Versions.Test.mockito}"
 

@@ -9,7 +9,6 @@ object Versions {
     }
 
     object AndroidX {
-        const val appCompatVersion = "1.3.0"
         const val coreKtxVersion = "1.5.0"
         const val constraintLayoutVersion = "2.0.4"
         const val hiltVersion = "2.38.1"
@@ -34,7 +33,6 @@ object Versions {
     object Test {
         const val junit = "4.12"
         const val mockito = "3.9.0"
-        const val mockitoKotlin = "3.2.0"
         const val androidXTest = "1.4.0"
         const val androidXjUnit = "1.1.3"
         const val androidXArchCore = "2.1.0"

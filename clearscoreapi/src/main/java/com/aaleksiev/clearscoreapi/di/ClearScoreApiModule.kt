@@ -7,9 +7,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 
-@Module(
-    includes = [NetworkModule::class]
-)
+@Module
 @InstallIn(SingletonComponent::class)
 class ClearScoreApiModule {
     @Provides
