@@ -31,4 +31,10 @@
     <style name="CreditReportProgress" parent="Widget.MaterialComponents.CircularProgressIndicator">
         <item name="indicatorColor">@color/orange</item>
     </style>
+
+    <style name="CreditReportSubTitle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">@style/SubTitleTextAppearance</item>
+        <item name="android:textColor">@null</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

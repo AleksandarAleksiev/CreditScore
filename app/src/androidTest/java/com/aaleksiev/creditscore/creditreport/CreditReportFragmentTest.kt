@@ -15,7 +15,7 @@ class CreditReportFragmentTest : HiltTestBase() {
     lateinit var creditReportApi: CreditReportApi
 
     @Test
-    fun willLoadUserCreditReport() {
+    fun willDisplayUserCreditReport() {
         runBlocking {
             given(creditReportApi.getCreditReport()).willReturn(creditReportResponse)
 
@@ -28,6 +28,17 @@ class CreditReportFragmentTest : HiltTestBase() {
                         MAX_CREDIT_SCORE
                     )
                 )
+            }
+        }
+    }
+
+    @Test
+    fun willDisplayError() {
+        runBlocking {
+            given(creditReportApi.getCreditReport()).willThrow(IllegalArgumentException::class.java)
+
+            creditReport {
+                errorIsDisplayed()
             }
         }
     }

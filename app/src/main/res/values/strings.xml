@@ -3,4 +3,7 @@
     <string name="credit_report">Credit report</string>
     <string name="your_credit_report">Your credit score is</string>
     <string name="your_credit_score_out_of">out of %d</string>
+    <string name="error_title">Oops, something went wrong</string>
+    <string name="error_try_again">Please, try again</string>
+    <string name="retry">Retry</string>
 </resources>

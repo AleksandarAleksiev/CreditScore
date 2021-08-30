@@ -8,6 +8,7 @@
     <dimen name="dimen_300">300dp</dimen>
 
     <!-- Font sizes-->
+    <dimen name="font_size_16">16sp</dimen>
     <dimen name="font_size_20">20sp</dimen>
     <dimen name="font_size_48">48sp</dimen>
 </resources>

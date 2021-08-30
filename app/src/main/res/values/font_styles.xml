@@ -6,6 +6,11 @@
         <item name="android:textSize">@dimen/font_size_20</item>
     </style>
 
+    <style name="SubTitleTextAppearance">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/font_size_16</item>
+    </style>
+
     <style name="CreditScoreTextAppearance">
         <item name="android:textColor">@color/orange</item>
         <item name="android:textSize">@dimen/font_size_48</item>

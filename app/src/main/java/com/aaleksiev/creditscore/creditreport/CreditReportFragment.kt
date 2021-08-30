@@ -2,8 +2,10 @@ package com.aaleksiev.creditscore.creditreport
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.aaleksiev.core.extensions.displayChild
 import com.aaleksiev.core.models.updateUI
 import com.aaleksiev.core.viewbinding.viewBinding
 import com.aaleksiev.creditscore.R
@@ -25,23 +27,26 @@ class CreditReportFragment : Fragment(R.layout.fragment_credit_report) {
             uiState.updateUI(
                 onLoading = ::onLoading,
                 onSuccess = ::onSuccess,
-                onError = ::onError
+                onError = { onError() }
             )
         }
     }
 
     private fun onLoading(isLoading: Boolean) {
+        binding.selectedView.isVisible = !isLoading
         binding.doughnutLayout.setIndeterminate(isLoading)
     }
 
     private fun onSuccess(userCreditReport: UserCreditReport) = with(binding) {
+        selectedView.displayChild(report.root.id)
         doughnutLayout.setPercent(userCreditReport.percentOfTotal())
-        totalCreditScore.text =
+        report.totalCreditScore.text =
             getString(R.string.your_credit_score_out_of, userCreditReport.maxCreditScore)
-        creditScore.text = userCreditReport.creditScore.toString()
+        report.creditScore.text = userCreditReport.creditScore.toString()
     }
 
-    private fun onError(message: String) {
-        //TODO "Not yet implemented"
+    private fun onError() = with(binding) {
+        selectedView.displayChild(error.root.id)
+        doughnutLayout.setPercent(0)
     }
 }

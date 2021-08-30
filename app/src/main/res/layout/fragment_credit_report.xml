@@ -16,49 +16,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ViewSwitcher
+            android:id="@+id/selected_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            tools:visibility="visible">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/title"
-                style="@style/CreditReportTitle"
-                android:layout_width="@dimen/dimen_0"
+            <include
+                android:id="@+id/report"
+                layout="@layout/layout_credit_report"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/your_credit_report"
-                app:layout_constraintBottom_toTopOf="@+id/credit_score"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed" />
+                android:layout_gravity="center" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/credit_score"
-                style="@style/CreditReportScore"
-                android:layout_width="@dimen/dimen_0"
+            <include
+                android:id="@+id/error"
+                layout="@layout/layout_error"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_16"
-                app:layout_constraintBottom_toTopOf="@id/total_credit_score"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title"
-                app:layout_constraintVertical_chainStyle="packed"
-                tools:text="327" />
+                android:layout_gravity="center" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/total_credit_score"
-                style="@style/CreditReportTitle"
-                android:layout_width="@dimen/dimen_0"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_16"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/credit_score"
-                app:layout_constraintVertical_chainStyle="packed"
-                tools:text="out of 700" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </ViewSwitcher>
 
     </com.aaleksiev.creditscore.DoughnutLayout>
 
