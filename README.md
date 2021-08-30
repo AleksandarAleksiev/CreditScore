@@ -17,6 +17,8 @@
 
 ## **Technologies used**
 
+    * Android architecture componens
+    * Hilt as DI framework
     * Kotlin coroutines for asynchronous operations
     * Retrofit to connect to Rest API. Retrofit cache is enabled to cache API responses
     * Moshi for parsing JSON and deserializing it into Kotlin objects and serializing objects into JSON
